@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Julie Gunderson: developer advocate and community builder focused on burnout, the people inside technical systems, and AI. Founder of DevOpsDays Boise; now in her Master's in Clinical Mental Health Counseling.">
+<meta name="description" content="Julie Gunderson: technologist and community builder passionate about AI, burnout and the people inside technical systems. Founder of DevOpsDays Boise; now in her Master's in Clinical Mental Health Counseling.">
 <meta property="og:title" content="Julie Gunderson">
-<meta property="og:description" content="Developer advocate, community builder and speaker on burnout, reliability and AI. Founder of DevOpsDays Boise.">
+<meta property="og:description" content="Speaker and community builder on AI, burnout and reliability. Founder of DevOpsDays Boise.">
 <meta property="og:type" content="profile">
 <link rel="canonical" href="https://juliegunderson.net/">
 <title>Julie Gunderson</title>
@@ -14,18 +14,22 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 html,body{margin:0}
-/* Layout: a single reading column with a narrow left margin for labels; story in serif, evidence in mono; calm neutral palette with a sage accent. */
+/* Layout: a single reading column with a narrow left margin for labels; story in serif, evidence in mono; natural palette: sage, light pink and lavender. */
 :root{
-  --bg:#f3f4f1;          /* soft fog */
-  --surface:#fafaf8;
-  --ink:#3b403d;         /* warm charcoal */
-  --muted:#6f7570;
-  --rule:#e0e3de;
-  --accent:#6b8774;      /* muted sage */
-  --accent-soft:#e5ebe6;
-  --teal:#56705f;        /* link sage */
-  --stage:#3e4541;
-  --stage-ink:#f3f4f1;
+  --bg:#f8f6f4;          /* soft natural white */
+  --surface:#fdfcfb;
+  --ink:#3e3b42;         /* soft plum-charcoal */
+  --muted:#76717b;
+  --rule:#e7e2e4;
+  --accent:#5b7a63;      /* sage, text-safe */
+  --accent-soft:#e4ece5; /* sage tint */
+  --teal:#557560;        /* links in sage */
+  --rose:#f6e6e8;        /* light pink */
+  --rose-ink:#9a5f6e;
+  --lavender:#eee9f5;
+  --lavender-ink:#6c5f8d;
+  --stage:#4d475a;
+  --stage-ink:#f8f6f4;
   --display:"Petrona", Georgia, "Times New Roman", serif;
   --body:"Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
@@ -33,13 +37,15 @@ html,body{margin:0}
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#1d201e; --surface:#252926; --ink:#e4e6e2; --muted:#a6aca7; --rule:#343935;
-    --accent:#a8c0af; --accent-soft:#2c352f; --teal:#b4c9bb; --stage:#161917; --stage-ink:#eef0ec; color-scheme:dark;
+    --bg:#1f1d22; --surface:#27242b; --ink:#ebe7ee; --muted:#aaa4b0; --rule:#38343d;
+    --accent:#a9c4ae; --accent-soft:#2c3630; --teal:#b3ccb8; --rose:#3a2a2f; --rose-ink:#e6b3c0;
+    --lavender:#2f2a3b; --lavender-ink:#c8bde6; --stage:#2a2633; --stage-ink:#f1eef4; color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#1d201e; --surface:#252926; --ink:#e4e6e2; --muted:#a6aca7; --rule:#343935;
-  --accent:#a8c0af; --accent-soft:#2c352f; --teal:#b4c9bb; --stage:#161917; --stage-ink:#eef0ec; color-scheme:dark;
+  --bg:#1f1d22; --surface:#27242b; --ink:#ebe7ee; --muted:#aaa4b0; --rule:#38343d;
+  --accent:#a9c4ae; --accent-soft:#2c3630; --teal:#b3ccb8; --rose:#3a2a2f; --rose-ink:#e6b3c0;
+  --lavender:#2f2a3b; --lavender-ink:#c8bde6; --stage:#2a2633; --stage-ink:#f1eef4; color-scheme:dark;
 }
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.65}
@@ -91,7 +97,7 @@ section{padding-block:3.5rem;border-top:1px solid var(--rule)}
 .area .desc{color:var(--muted);margin-top:.6rem;max-width:40ch}
 .area ul{margin:0;padding:0;list-style:none;display:grid;gap:.6rem;align-content:start}
 .area li{padding-left:1.1rem;position:relative}
-.area li::before{content:"";position:absolute;left:0;top:.72em;width:.45rem;height:.45rem;border-radius:50%;background:var(--accent-soft);border:1px solid var(--accent)}
+.area li::before{content:"";position:absolute;left:0;top:.72em;width:.45rem;height:.45rem;border-radius:50%;background:var(--lavender);border:1px solid var(--lavender-ink)}
 @media (max-width: 760px){.area{grid-template-columns:minmax(0,1fr)}}
 
 /* talks */
@@ -106,8 +112,8 @@ section{padding-block:3.5rem;border-top:1px solid var(--rule)}
 .log .tt{font-family:var(--display);font-size:1.1rem;line-height:1.35}
 .log .tt a{color:var(--ink)}
 .log .tt a:hover{color:var(--accent)}
-.tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;padding:.15rem .45rem;border-radius:2px;background:var(--accent-soft);color:var(--ink);white-space:nowrap}
-.tag.k{background:var(--accent);color:var(--bg)}
+.tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;padding:.15rem .45rem;border-radius:2px;background:var(--lavender);color:var(--lavender-ink);white-space:nowrap}
+.tag.k{background:var(--accent-soft);color:var(--accent)}
 
 /* lists */
 .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem}
@@ -122,7 +128,7 @@ section{padding-block:3.5rem;border-top:1px solid var(--rule)}
 .quotes{display:grid;gap:0;border-top:1px solid var(--rule)}
 .q{margin:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,14rem);gap:.75rem 3rem;align-items:end;padding-block:2rem;border-bottom:1px solid var(--rule)}
 .q blockquote{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,3.6vw,2.6rem);line-height:1.15;text-wrap:balance;color:var(--ink)}
-.q:nth-child(2) blockquote{font-style:italic;color:var(--accent)}
+.q:nth-child(2) blockquote{font-style:italic;color:var(--rose-ink)}
 .q figcaption{display:grid;gap:.2rem;font-size:.85rem;color:var(--muted)}
 .q figcaption a{font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent);justify-self:start}
 .q figcaption a:hover{color:var(--accent)}
@@ -133,7 +139,7 @@ section{padding-block:3.5rem;border-top:1px solid var(--rule)}
 .featured-in a:hover{color:var(--accent);text-decoration:underline}
 .featured-in span{font-size:.88rem;color:var(--muted)}
 
-.feature{background:var(--surface);margin-inline:calc(-1 * clamp(16px,4vw,40px));padding-inline:clamp(16px,4vw,40px)}
+.feature{background:var(--rose);margin-inline:calc(-1 * clamp(16px,4vw,40px));padding-inline:clamp(16px,4vw,40px)}
 .feature h2{font-style:italic;font-weight:600}
 .feature-meta{display:grid;gap:.35rem;align-content:start}
 .pull{font-family:var(--display);font-style:italic;font-size:clamp(1.3rem,2.6vw,1.65rem);line-height:1.35;color:var(--ink);border-left:2px solid var(--accent);padding-left:1.1rem}
@@ -143,14 +149,16 @@ section{padding-block:3.5rem;border-top:1px solid var(--rule)}
 .cta.ghost{background:transparent;color:var(--ink);border:1px solid var(--rule)}
 .cta.ghost:hover{border-color:var(--accent);color:var(--accent);background:transparent}
 .video{position:relative;overflow:hidden;display:flex;align-items:center;gap:1.1rem;aspect-ratio:16/7;max-width:100%;padding:1.5rem;border-radius:3px;text-decoration:none;color:var(--stage-ink);
-  background:radial-gradient(circle at 78% 30%, rgba(168,192,175,.30), transparent 38%),radial-gradient(circle at 88% 70%, rgba(243,244,241,.12), transparent 30%),var(--stage)}
-.video .play{flex:none;display:grid;place-items:center;width:4rem;height:4rem;border-radius:50%;background:#dfe8e1;color:#3e4541;transition:transform .2s}
+  background:radial-gradient(circle at 78% 30%, rgba(169,196,174,.35), transparent 38%),radial-gradient(circle at 88% 70%, rgba(230,179,192,.30), transparent 30%),var(--stage)}
+.video .play{flex:none;display:grid;place-items:center;width:4rem;height:4rem;border-radius:50%;background:#f6e6e8;color:#4d475a;transition:transform .2s}
 .video:hover .play,.video:focus-visible .play{transform:scale(1.08)}
 .video .vtext{display:grid;gap:.2rem;min-width:0}
 .video .vt{font-family:var(--display);font-size:clamp(1.3rem,3vw,1.8rem);font-weight:600;font-style:italic}
 .video .vs{font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;opacity:.8}
 .video .spark{position:absolute;right:8%;top:22%;width:5rem;height:5rem;background:conic-gradient(from 45deg,transparent 0 20%,rgba(255,255,255,.75) 22%,transparent 24% 45%,rgba(255,255,255,.75) 47%,transparent 49% 70%,rgba(255,255,255,.75) 72%,transparent 74% 95%,rgba(255,255,255,.75) 97%,transparent 99%);border-radius:50%;opacity:.5;pointer-events:none}
 @media (max-width:520px){.video{aspect-ratio:auto;min-height:9rem}.video .spark{display:none}}
+.ai-note{background:var(--lavender);margin-inline:calc(-1 * clamp(16px,4vw,40px));padding-inline:clamp(16px,4vw,40px)}
+.ai-note h2 em{font-style:italic;color:var(--lavender-ink)}
 .player{position:relative;aspect-ratio:16/9;max-width:100%;border-radius:3px;overflow:hidden;background:var(--stage)}
 .player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .contact{display:flex;flex-wrap:wrap;gap:.75rem 2rem;font-family:var(--mono);font-size:.9rem}
@@ -175,6 +183,7 @@ footer{padding-block:2rem 0;border-top:1px solid var(--rule);color:var(--muted);
     <a class="name" href="#top">Julie Gunderson</a>
     <ul>
       <li><a href="#about">About</a></li>
+      <li><a href="#ai">AI</a></li>
       <li><a href="#focus">Expertise</a></li>
       <li><a href="#speaking">Speaking</a></li>
       <li><a href="#writing">Writing &amp; podcasts</a></li>
@@ -184,9 +193,9 @@ footer{padding-block:2rem 0;border-top:1px solid var(--rule);color:var(--muted);
   </nav>
 
   <header class="hero" id="top">
-    <p class="label">Developer advocate · Community builder · Clinical Mental Health Counseling</p>
+    <p class="label">AI · Community · The people inside technology</p>
     <h1>The systems we build are only as healthy as <em>the people who run them.</em></h1>
-    <p class="lede">For more than a decade Julie Gunderson has worked where technology meets the humans inside it: incident response, on-call stress, burnout, blameless culture and the communities that hold engineers together. She has carried that work from DevOpsDays Boise to AWS re:Invent and the United Nations, and is now in her Master's in Clinical Mental Health Counseling.</p>
+    <p class="lede">For more than a decade Julie Gunderson has worked where technology meets the humans inside it: incident response, on-call stress, burnout, blameless culture and the communities that hold engineers together. She has carried that work from DevOpsDays Boise to stages like KotlinConf, AWS re:Invent and the United Nations, and is now in her Master's in Clinical Mental Health Counseling.</p>
     <div class="status" aria-label="Current status">
       <span><span class="dot" aria-hidden="true"></span><b>Now</b> · Master's in Clinical Mental Health Counseling</span>
       <span><b>Based</b> · Boise, Idaho</span>
@@ -195,7 +204,6 @@ footer{padding-block:2rem 0;border-top:1px solid var(--rule);color:var(--muted);
     <div class="stages" aria-label="Selected stages">
       <a href="https://blog.jetbrains.com/kotlin/2024/06/kotlinconf24-recordings/" target="_blank" rel="noopener">KotlinConf 2024 keynote</a>
       <a href="https://dev.classmethod.jp/articles/ai-devops-awsreinvent-dev321/" target="_blank" rel="noopener">AWS re:Invent 2024</a>
-      <a href="#speaking">United Nations, Geneva</a>
       <a href="#sparkle">Embracing My Sparkle</a>
       <a href="#speaking">DevOpsDays in 11 cities</a>
       <a href="https://www.chef.io/blog/chef-at-devopsdays-boise" target="_blank" rel="noopener">Founder, DevOpsDays Boise</a>
@@ -210,7 +218,7 @@ footer{padding-block:2rem 0;border-top:1px solid var(--rule);color:var(--muted);
     <div class="sec-head"><p class="label">About</p><h2 id="about-h">From incident response to the human response</h2></div>
     <div class="sec-body"><div></div><div class="main prose">
       <p>Julie Gunderson began her public work in Boise, writing feature stories for the <i>Boise Weekly</i> and leading workshops for the city's young professionals. In 2016, while relationships and community manager at Taos, she brought DevOpsDays to her hometown, assembling the organizing team and recruiting the speakers for the first DevOpsDays Boise. She co-organized the conference through its full run, from 2016 to 2023. She also served on the all-volunteer organizing team of DeliveryConf, a not-for-profit conference on continuous integration and continuous delivery held in Seattle in 2020.</p>
-      <p>At PagerDuty, Gremlin and Amazon Web Services she worked as a developer and reliability advocate. Her talks kept returning to the same question: what happens to people when systems fail? She spoke on the psychology of chaos engineering, reducing trauma in production, blameless postmortems and why organizations “can't buy DevOps.” With Ana Margarita Medina she presented <i>Don't Forget the Humans</i>, a talk on burnout and the human cost of reliability work. She also led AI and software development teams, presented on generative AI for DevOps at AWS re:Invent, and spoke on AI for developing countries at the United Nations in Geneva.</p>
+      <p>At PagerDuty, Gremlin and Amazon Web Services she worked as a developer and reliability advocate. Her talks kept returning to the same question: what happens to people when systems fail? She spoke on the psychology of chaos engineering, reducing trauma in production, blameless postmortems and why organizations “can't buy DevOps.” With Ana Margarita Medina she presented <i>Don't Forget the Humans</i>, a talk on burnout and the human cost of reliability work. She also led AI and software development teams, presented on generative AI for DevOps at AWS re:Invent, and gave a talk on AI for developing countries at an event held at the United Nations in Geneva.</p>
       <p>After AWS she served as Director of Influencer Relations at freeman + forrest. That focus on the people inside technical systems then led her to clinical mental health counseling. She is now in her Master's in Clinical Mental Health Counseling, bringing two decades of community building and an insider's understanding of high-pressure technical work to the counseling room.</p>
     </div></div>
   </section>
@@ -228,6 +236,14 @@ footer{padding-block:2rem 0;border-top:1px solid var(--rule);color:var(--muted);
       <div class="cta-row">
         <a class="cta ghost" href="https://www.socallinuxexpo.org/scale/14x/presentations/embracing-my-sparkle/index.html" target="_blank" rel="noopener">Also presented at SCALE 14x (2016)</a>
       </div>
+    </div></div>
+  </section>
+
+  <section id="ai" aria-labelledby="ai-h" class="ai-note">
+    <div class="sec-head"><p class="label">Why AI</p><h2 id="ai-h">A passion for AI that <em>works for people</em></h2></div>
+    <div class="sec-body"><div></div><div class="main prose">
+      <p>Julie is passionate about artificial intelligence and what it can do when it is built with people in mind. She has led AI and software development teams, presented on using generative AI to improve DevOps practices at AWS re:Invent, and talked about how AI can help developing countries.</p>
+      <p>Her interest sits where AI meets the people who use it: how it changes the way teams work, how communities can share in its benefits, and how it affects well-being. It is the same question she has always asked about technology. What happens to the humans?</p>
     </div></div>
   </section>
 
@@ -251,7 +267,7 @@ footer{padding-block:2rem 0;border-top:1px solid var(--rule);color:var(--muted);
           <li><a href="https://www.chef.io/blog/chef-at-devopsdays-boise" target="_blank" rel="noopener">Founder, DevOpsDays Boise</a> (2016–2023)</li>
           <li><a href="https://deliveryconf.com/#about-nav" target="_blank" rel="noopener">Organizing team, DeliveryConf</a> (Seattle, 2020)</li>
           <li><a href="https://www.pageittothelimit.com/host/" target="_blank" rel="noopener">Host, Page It to the Limit</a> (2019–21)</li>
-          <li>Guest judge, UN OSPO for Good hackathon (2025)</li>
+          <li>Guest judge for the OSPO for Good hackathon during UN Open Source Week (2025)</li>
           <li><a href="https://appmap.io/blog/2021/03/30/welcoming-applands-new-advisor-julie-gunderson" target="_blank" rel="noopener">Advisor, AppMap</a> (2021–)</li>
         </ul>
       </div>
@@ -260,7 +276,7 @@ footer{padding-block:2rem 0;border-top:1px solid var(--rule);color:var(--muted);
         <p class="desc">Leading AI and software development teams, and speaking on how AI can help engineering teams and developing countries.</p></div>
         <ul>
           <li><a href="https://dev.classmethod.jp/articles/ai-devops-awsreinvent-dev321/" target="_blank" rel="noopener">Supercharge Your DevOps Practices with Generative AI</a>, AWS re:Invent (2024)</li>
-          <li>AI for developing countries, United Nations, Geneva (2025)</li>
+          <li>Talk on AI for developing countries at an event held at the UN in Geneva (2025)</li>
           <li>Led AI and software development teams in big tech</li>
         </ul>
       </div>
@@ -356,8 +372,8 @@ footer{padding-block:2rem 0;border-top:1px solid var(--rule);color:var(--muted);
 
 <script>
 const talks = [
-  {y:"2025", ev:"United Nations, Geneva", t:"AI for developing countries", th:["ai"], kind:"Talk"},
-  {y:"2025", ev:"UN Open Source Week, New York", t:"Guest judge, OSPO for Good hackathon", th:["community","ai"], kind:"Judge", u:"https://www.un.org/digital-emerging-technologies/node/1137"},
+  {y:"2025", ev:"Event held at the United Nations, Geneva", t:"AI for developing countries", th:["ai"], kind:"Talk"},
+  {y:"2025", ev:"UN Open Source Week, New York", t:"Guest judge for the OSPO for Good hackathon", th:["community","ai"], kind:"Judge", u:"https://www.un.org/digital-emerging-technologies/node/1137"},
   {y:"2024", ev:"AWS re:Invent", t:"Supercharge Your DevOps Practices with Generative AI (DEV321), with Chris Williams", th:["ai"], kind:"Talk", u:"https://dev.classmethod.jp/articles/ai-devops-awsreinvent-dev321/"},
   {y:"2024", ev:"KotlinConf, Copenhagen", t:"Opening keynote (guest keynote speaker)", th:["community"], kind:"Keynote", u:"https://blog.jetbrains.com/kotlin/2024/06/kotlinconf24-recordings/"},
   {y:"2023", ev:"DevOpsDays New York City", t:"Don't Forget the Humans, with Ana Margarita Medina", th:["humans"], kind:"Talk", u:"https://devopsdays.org/events/2023-new-york-city/speakers/julie-gunderson/"},
