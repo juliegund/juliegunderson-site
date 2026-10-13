@@ -170,6 +170,18 @@ section{padding-block:3.5rem;border-top:1px solid var(--rule)}
 #un h2 em{font-style:italic;color:var(--accent)}
 @media (max-width:560px){.gallery{grid-template-columns:minmax(0,1fr)}}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:3}
+#blog h2 em{font-style:italic;color:var(--accent)}
+.posts{display:grid;gap:1.5rem}
+.post-card{display:grid;grid-template-columns:minmax(0,16rem) minmax(0,1fr);gap:1.25rem 2rem;align-items:start;text-decoration:none;color:inherit;padding:1rem;margin:-1rem;border-radius:4px}
+.post-card:hover{background:var(--surface)}
+.post-card img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:3px}
+.post-card .pc-text{display:grid;gap:.6rem;min-width:0}
+.post-card h3{font-size:clamp(1.35rem,2.6vw,1.75rem);line-height:1.2;font-weight:600;color:var(--ink)}
+.post-card:hover h3{color:var(--accent)}
+.post-card .meta{font-family:var(--mono);font-size:.82rem;color:var(--muted)}
+.post-card .ex{color:var(--muted);max-width:60ch}
+.post-card .more{font-family:var(--mono);font-size:.9rem;color:var(--teal)}
+@media (max-width:640px){.post-card{grid-template-columns:minmax(0,1fr)}}
 .contact{display:flex;flex-wrap:wrap;gap:.75rem 2rem;font-family:var(--mono);font-size:.9rem}
 footer{padding-block:2rem 0;border-top:1px solid var(--rule);color:var(--muted);font-size:.85rem;display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between}
 
@@ -193,6 +205,7 @@ footer{padding-block:2rem 0;border-top:1px solid var(--rule);color:var(--muted);
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#community">Community</a></li>
+      <li><a href="#blog">Blog</a></li>
       <li><a href="#ai">AI</a></li>
       <li><a href="#focus">Expertise</a></li>
       <li><a href="#speaking">Speaking</a></li>
@@ -247,6 +260,21 @@ footer{padding-block:2rem 0;border-top:1px solid var(--rule);color:var(--muted);
         <li><span class="t">University of Phoenix reentry program</span><span class="meta">Founder · helped students near graduation return and finish · Idaho campus</span></li>
         <li><span class="t">OSPO for Good hackathon, UN Open Source Week</span><span class="meta">Guest judge · 2025</span></li>
       </ul>
+    </div></div>
+  </section>
+
+  <section id="blog" aria-labelledby="blog-h">
+    <div class="sec-head"><p class="label">Blog</p><h2 id="blog-h">Writing <em>from this chapter</em></h2></div>
+    <div class="sec-body"><div></div><div class="main posts">
+      <a class="post-card" href="blog/beyond-the-badge.html">
+        <img src="blog/curiosity-cover.jpg" width="1114" height="960" loading="lazy" alt="A pile of conference lanyards and badges collected over years of tech conferences">
+        <div class="pc-text">
+          <p class="meta">October 13, 2026</p>
+          <h3>Beyond the Badge: Seeing People, Not Titles</h3>
+          <p class="ex">What if some of the most important things we learn throughout our careers have very little to do with the work itself?</p>
+          <span class="more">Read the post →</span>
+        </div>
+      </a>
     </div></div>
   </section>
 
